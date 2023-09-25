@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media screen and (max-width: 640px) {
+    .about-us-container {
+        @apply flex;
+        @apply flex-col;
+        @apply justify-center;
+        @apply items-center;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .about-us-container {
+        @apply flex;
+        @apply flex-row;
+        @apply justify-between;
+        @apply items-center;
+        @apply w-1/2;
+        @apply mx-auto;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px), (max-width: 480px) {
+    .about-us-img {
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 640px), (min-width: 1024px) {
+    .about-us-img {
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+    }
+}
+
+
