@@ -1,27 +1,34 @@
-<html>
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <title>Cineforum</title>
 </head>
 
 <body class="antialiased bg-amber-50 font-body">
 <div class="container mx-auto pt-4 text-center">
-    <h1 class="text-3xl font-bold border border-gray-500 rounded inline-block p-4 shadow-lg bg-amber-100">
+    <h1 id="top" class="text-3xl font-bold border border-gray-500 rounded inline-block p-4 shadow-lg bg-amber-100">
         🎬 cineforum
     </h1>
 </div>
 <div class="container mx-auto" style="margin-top: 2rem">
     <nav class="flex justify-center items-center font-bold text-sm" style="gap: 5px; color: rgb(128,128,128)">
-        <button>🎬 missione</button>
+        <a href="#mission">🎬 missione</a>
         <span>/</span>
-        <button>🙋 chi siamo</button>
+        <a href="#about-us">🙋 chi siamo</a>
         <span>/</span>
-        <button>📽️ i film in proiezione</button>
+        <a href="#movies">📽️ i film in proiezione</a>
     </nav>
 </div>
-<div class="container px-4 mx-auto mt-8 text-justify">
+<div id="mission" class="container px-4 mx-auto mt-8 text-justify">
     <div class="p-4 bg-amber-100 border border-gray-500 rounded shadow-lg">
         <h3 class="text-2xl font-bold">Missione</h3>
         <p class="text-xl">
@@ -72,95 +79,256 @@
 </div>
 <div class="container mx-auto text-center" style="margin-top: 2rem;">
     <h1 class="text-3xl font-bold border border-gray-500 rounded inline-block p-4 shadow-lg bg-amber-100">
-        🙋 chi siamo
+        🙋 chi e dove siamo
     </h1>
 </div>
-<div class="container px-4 mx-auto mt-8 text-justify">
-    <div class="about-us-container">
-        <div class="p-2 flex justify-center items-center text-sm bg-amber-100 border rounded shadow-lg border-gray-500 h-full" style="flex-direction: column; gap: 10px; width: 40%">
-            <img src="resources/f0a624fe-63af-41e0-8d0a-bc17a79f627b.jpg" alt="sium" class="about-us-img">
-            <h6 class="font-bold">Tommaso Calvani</h6>
-            <p>matteo messina level of non parlare</p>
-            <p>represso sessualmente</p>
-            <p>futuro disoccupato (DAMS)</p>
+<div id="about-us" class="container px-4 mx-auto flex flex-col justify-center mt-8 text-justify">
+    <div class="w-full bg-amber-100 border border-gray-500 rounded-lg">
+        <img style="width: 100%; height: 300px; object-fit: cover; border-top-left-radius: 8px; border-top-right-radius: 8px"
+             src="resources/circolo%20arci%20andreoni-2.jpg" alt="foto circolo">
+        <div class="p-4 text-lg">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
+                aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore
+                eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
         </div>
-        <div class="p-2 flex justify-center items-center text-sm bg-amber-100 border rounded shadow-lg border-gray-500 h-full" style="flex-direction: column; gap: 10px; width: 40%">
-            <img src="resources/51c78bd2-f499-4fd0-8415-c1e11629933a.jpg" alt="sium" class="about-us-img">
-            <h6 class="font-bold">Pietro Mocali</h6>
-            <p>comunista convinto - level: logorroico</p>
-            <p>tribolato, represso sessualmente</p>
-            <p>esperto in prodotti contro la calvizia (Ingegnere informatico)</p>
+        <div class="map-section">
+            <div id="map" class="map">
+
+            </div>
+            <div class="map-text">
+                <h4>
+                    Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi
+                    ut
+                    aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum
+                    dolore
+                    eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum. </h4>
+                <p>Via Antonio d'Orso 8</p>
+                <p>Firenze</p>
+            </div>
         </div>
     </div>
 </div>
-<div class="container mx-auto text-center" style="margin-top: 2rem;">
+<div id="movies" class="container mx-auto text-center" style="margin-top: 2rem;">
     <h1 class="text-3xl font-bold border border-gray-500 rounded inline-block p-4 shadow-lg bg-amber-100">
         📽️ i film in proiezione
     </h1>
 </div>
 <div class="container px-4 mx-auto mt-8">
-    <div id="accordion-shrek" class=" bg-amber-100 border border-gray-500 rounded shadow-lg ">
-        <div class="flex items-center justify-center pt-4">
-            <h6 class="text-sm font-bold">Shrek</h6>
+    <div id="accordion-shrek2" class=" bg-amber-100 border border-gray-500 rounded shadow-lg ">
+        <div class="flex flex-col items-center justify-center my-4 p-4 text-justify">
+            <h1 class="text-lg font-bold">
+                NOME DEL PERCORSO CINEMATOGRAFICO
+            </h1>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
+                aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore
+                eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
         </div>
-        <div class="flex flex-wrap justify-center items-center pt-1" style="gap: 5px">
-            <span class="flex justify-center items-center text-sm font-bold p-1 rounded" style="gap: 2px; background-color: orange" >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="height: 18px; width: 18px;">
-                    <path fill-rule="evenodd"
-                          d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z"
-                          clip-rule="evenodd"/>
-                </svg>
-                <a class="font-tiny">2001</a>
-            </span>
-            <span class="flex justify-center items-center text-sm font-bold p-1 rounded" style="gap: 2px; background-color: orange" >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="height: 18px; width: 18px;">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" />
-                </svg>
-                <a>90 min</a>
-            </span >
+        <div class="flex flex-row flex-wrap justify-center items-center p-4" style="gap: 4rem">
+            <div class="flex flex-col" style="gap: 10px">
+                <div class="flex justify-center text-sm font-semibold">
+                    <h1> Shrek </h1>
+                </div>
+                <div class="flex flex-wrap justify-center items-center pt-1" style="gap: 5px">
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded"
+                          style="gap: 2px; background-color: orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             style="height: 18px; width: 18px;">
+                            <path fill-rule="evenodd"
+                                  d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                        <a class="font-tiny">2001</a>
+                    </span>
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded"
+                          style="gap: 2px; background-color: orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             style="height: 18px; width: 18px;">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                        <a class="font-tiny">90 min</a>
+                    </span>
 
-            <span class="flex justify-center items-center text-sm font-bold p-1 rounded" style="gap: 2px; background-color: orange" >
-                animazione/fantasy/comedy
-            </span>
-        </div>
-        <div class="p-4 flex flex-wrap justify-center items-center w-full">
-        </div>
-        <div class="p-4 grid grid-cols-4 gap-4">
-            <div class="col-span-1">
-                <img src="resources/locandina.jpg" width="150" height="300" class="border rounded-md shadow-lg mx-auto">
-            </div>
-            <div class="col-span-2 text-sm">
-                <h6 class="font-bold">Sinopsi</h6>
-                <p>Once upon a time, in a far away swamp, there lived an ogre named Shrek (Giuseppe Cruciani) whose
-                    precious solitude is suddenly shattered by an invasion of annoying fairy tale characters. They
-                    were all banished from their kingdom by the evil Lord Farquaad (Tony da Milano). Determined to
-                    save their home -- not to mention his -- Shrek cuts a deal with Farquaad and sets out to rescue
-                    Princess Fiona (David Parenzo) to be Farquaad's bride. Rescuing the Princess may be small
-                    compared to her deep, dark secret.</p>
-                <br>
-                <span><a class="font-bold">Regista: </a> qualcuno sicuramente</span>
-                <br>
-                <span><a class="font-bold">Attori: </a> decisamente qualcuno</span>
-            </div>
-            <div class="col-span-1 flex items-center justify-center h-full">
-                <button class="p-4 bg-amber-700 border border-gray-500 rounded shadow-lg">Prenota il tuo
-                    posto
-                </button>
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded font-tiny"
+                          style="gap: 2px; background-color: orange">
+                        animazione/fantasy/comedy
+                    </span>
 
+                </div>
+                <img src="resources/locandina.jpg" width="200" height="400"
+                     class="border rounded-md shadow-lg mx-auto">
+                <div class="col-span-1 flex items-center justify-center h-full"
+                     style="flex-direction: column; gap: 10px">
+                    <button class="p-4 bg-amber-700 border border-gray-500 rounded shadow-lg" data-modal-target="modal"
+                            data-modal-toggle="modal">Prenota il tuo
+                        posto
+                    </button>
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded font-tiny"
+                          style=" background-color: lawngreen">
+                posti ancora disponibili
+                </span>
+                </div>
+            </div>
+            <div class="flex flex-col" style="gap: 10px">
+                <div class="flex justify-center text-sm font-semibold">
+                    <h1> Shrek </h1>
+                </div>
+                <div class="flex flex-wrap justify-center items-center pt-1" style="gap: 5px">
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded"
+                          style="gap: 2px; background-color: orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             style="height: 18px; width: 18px;">
+                            <path fill-rule="evenodd"
+                                  d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                        <a class="font-tiny">2001</a>
+                    </span>
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded"
+                          style="gap: 2px; background-color: orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             style="height: 18px; width: 18px;">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                        <a class="font-tiny">90 min</a>
+                    </span>
+
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded font-tiny"
+                          style="gap: 2px; background-color: orange">
+                        animazione/fantasy/comedy
+                    </span>
+
+                </div>
+                <img src="resources/locandina.jpg" width="200" height="400"
+                     class="border rounded-md shadow-lg mx-auto">
+                <div class="col-span-1 flex items-center justify-center h-full"
+                     style="flex-direction: column; gap: 10px">
+                    <button class="p-4 bg-amber-700 border border-gray-500 rounded shadow-lg" data-modal-target="modal"
+                            data-modal-toggle="modal">Prenota il tuo
+                        posto
+                    </button>
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded font-tiny"
+                          style=" background-color: lawngreen">
+                posti ancora disponibili
+                </span>
+                </div>
+            </div>
+            <div class="flex flex-col" style="gap: 10px">
+                <div class="flex justify-center text-sm font-semibold">
+                    <h1> Shrek </h1>
+                </div>
+                <div class="flex flex-wrap justify-center items-center pt-1" style="gap: 5px">
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded"
+                          style="gap: 2px; background-color: orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             style="height: 18px; width: 18px;">
+                            <path fill-rule="evenodd"
+                                  d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                        <a class="font-tiny">2001</a>
+                    </span>
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded"
+                          style="gap: 2px; background-color: orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             style="height: 18px; width: 18px;">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                        <a class="font-tiny">90 min</a>
+                    </span>
+
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded font-tiny"
+                          style="gap: 2px; background-color: orange">
+                        animazione/fantasy/comedy
+                    </span>
+
+                </div>
+                <img src="resources/locandina.jpg" width="200" height="400"
+                     class="border rounded-md shadow-lg mx-auto">
+                <div class="col-span-1 flex items-center justify-center h-full"
+                     style="flex-direction: column; gap: 10px">
+                    <button class="p-4 bg-amber-700 border border-gray-500 rounded shadow-lg" data-modal-target="modal"
+                            data-modal-toggle="modal">Prenota il tuo
+                        posto
+                    </button>
+                    <span class="flex justify-center items-center shadow-lg text-xs font-bold p-1 rounded font-tiny"
+                          style=" background-color: lawngreen">
+                posti ancora disponibili
+                </span>
+                </div>
             </div>
         </div>
     </div>
-    <div class="grid grid-flow-col gap-4">
-        <div class="">
-
-        </div>
+    <div class="container mx-auto my-4 p-4 flex flex-row justify-between items-center text-sm text-gray-600">
+        <span>Made by @Mattoz</span>
+        <a href="#top">Torna in alto</a>
     </div>
 </div>
-<div class="container mx-auto my-4 p-4 flex flex-row justify-between items-center text-sm text-gray-600">
-    <span>Made by @Mattoz</span>
-    <span>Torna in alto</span>
+<div id="modal" tabindex="-1" aria-hidden="true"
+     class="fixed top-0 left-0 right-0 z-50 hidden overflow-x-hidden overflow-y-auto h-[calc(100%-1rem)] max-h-full w-full lg:p-24 p-6">
+    <div class="container lg:w-1/2 w-full mx-auto bg-amber-100 rounded-lg p-4 border border-gray-500 shadow-lg">
+        <div class="flex items-center pb-4 justify-between border-b border-gray-500">
+            <h1 class="font-bold text-2xl">Prenota il tuo biglietto!</h1>
+            <button data-modal-target="modal" data-modal-toggle="modal">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="container font-tiny border-b border-gray-500">
+            <span class="font-normal">Stai prenotando un posto per la proiezione di <a class="font-semibold">Shrek</a> il <a
+                    class="font-semibold">11/9/2001</a></span>
+            <form class="my-4 px-4" action="#">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="block rounded border-gray-500 w-full bg-amber-50"
+                       placeholder="La tua email" style="margin-bottom: 16px">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name" class="block rounded border-gray-500 w-full bg-amber-50"
+                       placeholder="Il tuo nome" style="margin-bottom: 16px">
+                <label for="surname">Cognome</label>
+                <input type="text" name="surname" id="surname"
+                       class="block rounded border-gray-500 w-full bg-amber-50"
+                       placeholder="Il tuo cognome" style="margin-bottom: 16px">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <input id="accept-privacy" type="checkbox">
+                        <label for="accept-privacy">Privacy policy</label>
+                    </div>
+                    <button type="submit" class="p-2 bg-amber-700 border border-gray-500 rounded shadow-lg">Prenota
+                        ora!
+                    </button>
+                </div>
+            </form>
+        </div>
+        <span class="mt-4 px-4 text-sm">
+            Questo sito salva solamente il tuo nome cognome ed email solamente per la durata della tua prenotazione!
+        </span>
+        <br>
+        <span class="px-4 text-sm">
+            I tuoi dati saranno eliminati subito dopo la proiezione!
+        </span>
+    </div>
 </div>
-</body>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+<script src="scripts/map.js"></script>
 
+</body>
 </html>
